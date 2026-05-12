@@ -1,0 +1,37 @@
+[
+  {
+    "id": "login_success",
+    "description": "Login exitoso con credenciales válidas",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expectedUrl": "/inventory.html"
+  },
+  {
+    "id": "login_empty_username",
+    "description": "Login con usuario vacío",
+    "username": "",
+    "password": "secret_sauce",
+    "expectedError": "Epic sadface: Username is required"
+  },
+  {
+    "id": "login_empty_password",
+    "description": "Login con contraseña vacía",
+    "username": "standard_user",
+    "password": "",
+    "expectedError": "Epic sadface: Password is required"
+  },
+  {
+    "id": "login_invalid_credentials",
+    "description": "Login con credenciales inválidas (usuario incorrecto)",
+    "username": "wrong_user",
+    "password": "wrong_pass",
+    "expectedError": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "id": "login_locked_user",
+    "description": "Login con usuario bloqueado",
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "expectedError": "Epic sadface: Sorry, this user has been locked out."
+  }
+]
