@@ -1,0 +1,44 @@
+[
+  {
+    "id": "get_users",
+    "description": "Listar todos los usuarios",
+    "expectedStatus": 200
+  },
+  {
+    "id": "get_user_existing",
+    "description": "Obtener usuario existente",
+    "userId": 1,
+    "expectedStatus": 200
+  },
+  {
+    "id": "get_user_not_found",
+    "description": "Obtener usuario inexistente",
+    "userId": 999,
+    "expectedStatus": 404
+  },
+  {
+    "id": "create_user",
+    "description": "Crear nuevo usuario",
+    "createPayload": {
+      "name": "Felipe",
+      "job": "QA Automation Engineer"
+    },
+    "expectedStatus": 201
+  },
+  {
+    "id": "update_user",
+    "description": "Actualizar usuario existente",
+    "userId": 1,
+    "updatePayload": {
+      "name": "Felipe Updated",
+      "job": "Senior QA Engineer"
+    },
+    "expectedStatus": 200
+  },
+  {
+    "id": "delete_user",
+    "description": "Eliminar usuario existente",
+    "userId": 1,
+    "expectedStatus": 200
+  }
+]

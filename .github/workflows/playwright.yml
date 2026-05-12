@@ -31,10 +31,15 @@ jobs:
       - name: Instalar Playwright browsers
         run: npx playwright install chromium --with-deps
 
-      - name: Ejecutar tests
+      - name: Ejecutar tests web
         run: npm run test:web
         env:
           BASE_URL: ${{ secrets.BASE_URL || 'https://www.saucedemo.com' }}
+
+      - name: Ejecutar tests api
+        run: npm run test:api
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL || 'https://jsonplaceholder.typicode.com' }}
 
       - name: Subir allure-results
         if: always()
